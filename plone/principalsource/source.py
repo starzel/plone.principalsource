@@ -1,5 +1,11 @@
 from zope.interface import implements
-from zope.app.component.hooks import getSite
+
+#Plone 4.3 import change
+try:
+    from zope.component.hooks import getSite
+except:
+    from zope.app.component.hooks import getSite 
+
 from zope.schema.interfaces import IContextSourceBinder
 
 from z3c.formwidget.query.interfaces import IQuerySource
